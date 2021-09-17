@@ -3,3 +3,5 @@ Bu dosyada SmartEdu projesinin Back-End yazılımlarının yapım aşamaları s�
 1)NPM init ile proje oluşturuldu.
 2)Express JS paketi indirildi.
 3)Nodemon JS paketi DevDepency olarak indirildi.
+4)Github repository oluşturuldu.
+5)Template Engine indirildi.
