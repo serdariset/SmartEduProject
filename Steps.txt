@@ -5,3 +5,7 @@ Bu dosyada SmartEdu projesinin Back-End yazılımlarının yapım aşamaları s�
 3)Nodemon JS paketi DevDepency olarak indirildi.
 4)Github repository oluşturuldu.
 5)Template Engine indirildi.
+6)Partials yönlendirmeleri yapıldı.
+7)MVC model oluşturuldu.
+8)Router işlemleri yapıldı.
+9)Mongoose indirildi.

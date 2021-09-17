@@ -1,30 +1,37 @@
 //3. Module Packages
 const express = require("express");
 const ejs = require("ejs");
-const { aboutPage } = require("./controllers/pageControllers");
+const mongoose = require('mongoose')
+
 
 //Core Module Packages
 const fs = require('fs')
 
 //MVC Exports
-const pageControllers = require('./controllers/pageControllers')
+const pageRoute = require('./routes/pageRoute')
+const courseRoute = require('./routes/courseRoute')
 
 const app = express(); //Express JS Modülünü başlatır.
 
+//Connect Databse with Mongoose
+mongoose.connect('mongodb://localhost/smartedu-db',{
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+}).then(()=>{
+  console.log('Database connected succesfully')
+})
+
 //Template Engine
 app.set("view engine", "ejs");
+app.use(express.json())
+app.use(express.urlencoded({ extended: true })) 
 
 //Middlewares
 app.use(express.static("public"));
 
 //Route
-app.get("/", (req, res) => {
-  res.status(200).render("index",
-        {page_name:'index'}
-    );
-});
-
-app.get("/about", pageControllers.aboutPage);
+app.use("/", pageRoute);
+app.use('/courses', courseRoute)
 
 
 
