@@ -11,6 +11,7 @@ const fs = require('fs')
 const pageRoute = require('./routes/pageRoute')
 const courseRoute = require('./routes/courseRoute')
 const categoryRoute = require('./routes/categoryRoute')
+const userRoute = require('./routes/userRoute')
 
 const app = express(); //Express JS Modülünü başlatır.
 
@@ -34,6 +35,8 @@ app.use(express.static("public"));
 app.use("/", pageRoute); //get istekleri (index,about,courses)
 app.use('/courses', courseRoute) //post isteği
 app.use('/categories',categoryRoute)
+app.use('/users',userRoute)
+
 
 
 

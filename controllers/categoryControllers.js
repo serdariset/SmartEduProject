@@ -6,7 +6,7 @@ exports.createCategory = async (req,res)=>{
 
         res.status(201).json({
             status: "success",
-            category
+            category,
         })
     } catch{
         res.status(400).json({
@@ -14,4 +14,5 @@ exports.createCategory = async (req,res)=>{
             error,
         })
     }
-}
+} 
+
