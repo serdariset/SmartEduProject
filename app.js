@@ -10,6 +10,7 @@ const fs = require('fs')
 //MVC Exports
 const pageRoute = require('./routes/pageRoute')
 const courseRoute = require('./routes/courseRoute')
+const categoryRoute = require('./routes/categoryRoute')
 
 const app = express(); //Express JS Modülünü başlatır.
 
@@ -30,9 +31,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static("public"));
 
 //Route
-app.use("/", pageRoute);
-app.use('/courses', courseRoute)
-
+app.use("/", pageRoute); //get istekleri (index,about,courses)
+app.use('/courses', courseRoute) //post isteği
+app.use('/categories',categoryRoute)
 
 
 
